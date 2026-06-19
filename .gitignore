@@ -1,0 +1,66 @@
+# =========================
+
+# Flutter App
+
+# =========================
+
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/.pub/
+app/build/
+app/.idea/
+app/.vscode/
+app/android/.gradle/
+app/android/app/debug/
+app/android/app/profile/
+app/android/app/release/
+
+# Generated Flutter files
+
+app/pubspec.lock
+
+# =========================
+
+# Node Server
+
+# =========================
+
+server/node_modules/
+server/.env
+server/logs/
+server/*.log
+
+# PM2
+
+server/.pm2/
+
+# =========================
+
+# OS Files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# IDE Files
+
+# =========================
+
+.idea/
+.vscode/
+
+# =========================
+
+# Environment Files
+
+# =========================
+
+.env
+.env.local
+.env.production
+.env.development
