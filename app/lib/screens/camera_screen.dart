@@ -38,7 +38,7 @@ class _CameraScreenState extends State<CameraScreen> {
 
     await webrtc.createPeerConnection(isStreamer: true);
 
-    socketService.connect();
+    await socketService.connect();
 
     portalController = PortalController(
       socketService: socketService,

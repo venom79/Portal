@@ -44,7 +44,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
 
     await webrtc.createPeerConnection(isStreamer: false);
 
-    socketService.connect();
+    await socketService.connect();
 
     portalController = PortalController(
       socketService: socketService,

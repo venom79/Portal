@@ -1,3 +1,4 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
 
 class SocketService {
@@ -7,11 +8,18 @@ class SocketService {
 
   bool get isConnected => _socket?.connected ?? false;
 
-  void connect() {
+  Future<void> connect() async {
     if (_socket?.connected == true) return;
 
+    final prefs = await SharedPreferences.getInstance();
+
+    final serverUrl =
+        prefs.getString("server_url") ?? "http://192.168.0.170:5000";
+
+    print("Connecting to: $serverUrl");
+
     _socket = io.io(
-      "http://192.168.0.170:5000",
+      serverUrl,
       io.OptionBuilder()
           .setTransports(['websocket'])
           .disableAutoConnect()
